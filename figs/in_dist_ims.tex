@@ -1,0 +1,27 @@
+\begin{tikzpicture}[]
+\begin{axis}[
+  axis equal image = {true},
+  yticklabels={,,}, xticklabels={,,},
+  enlargelimits = false,
+  axis on top,
+  colormap={wb}{gray(0cm)=(0); gray(1cm)=(1)},
+  colorbar,
+  xmin = 0.5,
+  xmax = 67.5,
+  ymin = 0.5,
+  ymax = 35.5
+]
+
+\addplot[
+  point meta min = 0.0,
+  point meta max = 1.0,
+  point meta = explicit,
+  matrix plot*,
+  mesh/cols = 67,
+  mesh/rows = 35
+] table[
+  meta = data
+] {tmp_10000000000136.dat};
+
+\end{axis}
+\end{tikzpicture}
